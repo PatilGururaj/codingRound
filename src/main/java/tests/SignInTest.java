@@ -1,3 +1,4 @@
+package tests;
 import com.sun.javafx.PlatformUtil;
 
 import java.util.List;
