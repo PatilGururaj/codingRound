@@ -1,0 +1,10 @@
+In all the 3 test files the Initialization of the driver was not in place
+Adjusted the driver that was never returned
+
+Started with the SingInTest
+* Found that it was not able to click on the SignIn Button.
+* Initial analysis showed that this button was in another frame.
+* Later tried switching the frame, was able to identify the frame, but it was not switching.
+* Did some google and after long hour, found out that it could be because of driver version.
+* Later replaced the ChromeDriver to the version the browser that i'm using
+* Now i was able to click the SignIn Button and was able to fix the SignInTest
