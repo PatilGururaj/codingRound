@@ -8,3 +8,9 @@ Started with the SingInTest
 * Did some google and after long hour, found out that it could be because of driver version.
 * Later replaced the ChromeDriver to the version the browser that i'm using
 * Now i was able to click the SignIn Button and was able to fix the SignInTest
+
+Improvement Suggestion:
+* We can remove the Object to the specific page and avoid having them in the Test Class
+* Similarly we can avoid having the Drive initialization from Test Class and move it to some Base class
+* We can have the Object class created separately
+* We can create separate helper class to bring in all the helper methods such as waitFor, isElementPresent
