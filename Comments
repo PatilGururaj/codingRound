@@ -13,4 +13,13 @@ Improvement Suggestion:
 * We can remove the Object to the specific page and avoid having them in the Test Class
 * Similarly we can avoid having the Drive initialization from Test Class and move it to some Base class
 * We can have the Object class created separately
-* We can create separate helper class to bring in all the helper methods such as waitFor, isElementPresent
+* We can create separate helper class to bring in all the helper methods such as waitFor, isElementPresent for reusability
+* Also we can have the selenium window functions also in separate utility class for reusability
+
+Implemented Suggestions:
+* Created a new PageObject class for SignIn
+* Used design pattern Page Object model for the test cases design
+
+Further Improvements:
+* Will create separate utility class for comparing the actual and expected values
+* Will create utility for Window functions
