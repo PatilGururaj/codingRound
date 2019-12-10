@@ -2,9 +2,6 @@ package tests;
 
 import pages.FlightBookingPage;
 import utiity.Base;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -25,7 +22,7 @@ public class FlightBookingTest extends Base{
     	FlightBookingPage flightBooking = new FlightBookingPage(driver);
     	navigateToApplication("https://www.cleartrip.com/");
     	waitFor(2000);
-    	flightBooking.searchForOneWayFlights();
+    	flightBooking.searchForOneWayFlights("Bangalore", "Delhi");
 
         /*driver = setDriverPath();
         driver.get("https://www.cleartrip.com/");
@@ -53,11 +50,14 @@ public class FlightBookingTest extends Base{
         driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div[1]/table/tbody/tr[3]/td[7]/a")).click();
 
         //all fields filled in. Now click on search
-        driver.findElement(By.id("SearchBtn")).click();*/
+        driver.findElement(By.id("SearchBtn")).click();
 
         waitFor(5000);
         //verify that result appears for the provided journey search
-        Assert.assertTrue(isElementPresent(By.className("searchSummary")));
+        Assert.assertTrue(isElementPresent(By.className("searchSummary")));*/
+        
+        Boolean flag = flightBooking.verifySearchResults("Bangalore", "Delhi");
+        Assert.assertTrue(flag);
 
         //close the browser
         driver.quit();
@@ -74,14 +74,14 @@ public class FlightBookingTest extends Base{
     }
 
 
-    private boolean isElementPresent(By by) {
+    /*private boolean isElementPresent(By by) {
         try {
             driver.findElement(by);
             return true;
         } catch (NoSuchElementException e) {
             return false;
         }
-    }
+    }*/
 
     /*private WebDriver setDriverPath() {
         if (PlatformUtil.isMac()) {

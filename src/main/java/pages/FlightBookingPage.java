@@ -37,15 +37,16 @@ public class FlightBookingPage {
 	@FindBy(id="SearchBtn")
 	WebElement btnSearchFlights;
 	
+	
 	public FlightBookingPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void searchForOneWayFlights(){
+	public void searchForOneWayFlights(String src, String dest){
 		radioButtonOneWay.click();
 		txtBoxFrom.clear();
-		txtBoxFrom.sendKeys("Bangalore");
+		txtBoxFrom.sendKeys(src);
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
@@ -54,11 +55,28 @@ public class FlightBookingPage {
 		List<WebElement> originOptions = driver.findElement(By.id("ui-id-1")).findElements(By.tagName("li"));
 		originOptions.get(0).click();
 		txtBoxTo.clear();
-		txtBoxTo.sendKeys("Delhi");
+		txtBoxTo.sendKeys(dest);
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		List<WebElement> destinationOptions = driver.findElement(By.id("ui-id-2")).findElements(By.tagName("li"));
 		destinationOptions.get(0).click();
 		datePicker.click();
 		btnSearchFlights.click();
+	}
+	
+	public Boolean verifySearchResults(String src, String dest){
+		WebElement searchSummary = driver.findElement(By.xpath("//div[@class='searchSummary']/strong"));
+		String searchResult = searchSummary.getText();
+		if (searchResult.contains(src) && searchResult.contains(dest)){
+			return true;
+		}else
+		{
+		return false;
+		}
 	}
 	
 
