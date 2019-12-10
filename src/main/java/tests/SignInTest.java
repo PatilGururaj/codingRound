@@ -1,21 +1,21 @@
 package tests;
-import com.sun.javafx.PlatformUtil;
 
-import java.util.List;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import pages.SignInPage;
+import utiity.Base;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SignInTest {
+public class SignInTest extends Base{
 
     @Test
     public void shouldThrowAnErrorIfSignInDetailsAreMissing() {
 
-        WebDriver driver = setDriverPath();
+    	SignInPage signInPage  = new SignInPage(driver);
+    	navigateToApplication("https://www.cleartrip.com/");
+    	waitFor(2000);
+    	String errors1 = signInPage.signIn();
+    	
+    	/*WebDriver driver = setDriverPath();
         driver.manage().window().maximize();
 
         driver.get("https://www.cleartrip.com/");
@@ -31,8 +31,9 @@ public class SignInTest {
         driver.switchTo().defaultContent();
         driver.switchTo().frame(frameName);
         driver.findElement(By.id("signInButton")).click();
+        String errors1 = driver.findElement(By.id("errors1")).getText();*/
 
-        String errors1 = driver.findElement(By.id("errors1")).getText();
+        
         Assert.assertTrue(errors1.contains("There were errors in your submission"));
         driver.quit();
     }
@@ -45,7 +46,7 @@ public class SignInTest {
         }
     }
 
-    private WebDriver setDriverPath() {
+   /* private WebDriver setDriverPath() {
         if (PlatformUtil.isMac()) {
             System.setProperty("webdriver.chrome.driver", "chromedriver");
             return new ChromeDriver();   
@@ -59,7 +60,7 @@ public class SignInTest {
             return new ChromeDriver();   
         }
         return null;
-    }
+    }*/
 
 
 }

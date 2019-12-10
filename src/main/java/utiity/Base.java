@@ -5,6 +5,7 @@ package utiity;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
 
 import com.sun.javafx.PlatformUtil;
 
@@ -16,10 +17,12 @@ public class Base {
 	
 	public WebDriver driver;
 	
+	@BeforeTest
 	public void setUpDriver(){
 		driver = getBrowserInstance();
 		driver.manage().window().maximize();
 	}
+	
 	
 	public WebDriver getBrowserInstance(){
 		if (PlatformUtil.isMac()) {
@@ -35,6 +38,10 @@ public class Base {
             return new ChromeDriver();   
         }
         return null;
+	}
+	
+	public void navigateToApplication(String Url){
+		driver.get(Url);
 	}
 
 }

@@ -27,3 +27,12 @@ Further Improvements:
 Implemented Suggestions:
 * Moved the Driver path and initialization in separate Base class
 * Renamed the method as setUpDriver instead of setUpDriverPath
+
+Improvement Suggestions:
+* For now we can see the browser is always Chrome, we can parameterize and have a switch statement to have multiple browsers that we can use
+
+Implemented Suggestions:
+* Created a base test class which initiates the driver and also created method for launching web application
+* Refractored the SignInTest class and inherited the base test, now this can be reused across all the test classes
+
+
