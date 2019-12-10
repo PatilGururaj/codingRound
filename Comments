@@ -39,10 +39,13 @@ Started with FlightBookingTest class file
 * Tried to first check the existing tests
 * There was a typo for the id of the To text field.
 * Also there is a flaw of using the explicit wait. Sometimes the dropdown element value may pop wup within the explicit wait but sometimes it does not.
+* Unimplemented method inititalizeDriver() was present
+* Element is used more than once, but also identified with locators more than once. This is not required. We can reuse the element that is identified
+* We are doing the assertion but not verifying that the search results has the Source and Destination that we are looking for
 
 Improvement Suggestion:
-* Adjust the locators, can be moved to Page class as we did in SignInPage
-* Created an implicit wait, so that we can have the stable test
+* Adjust the locators, can be moved to Page class as we did in SignInPage. So that we can reuse the element
+* Create an implicit wait, so that we can have the stable test
 
 
 
