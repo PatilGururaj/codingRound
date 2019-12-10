@@ -35,4 +35,15 @@ Implemented Suggestions:
 * Created a base test class which initiates the driver and also created method for launching web application
 * Refractored the SignInTest class and inherited the base test, now this can be reused across all the test classes
 
+Started with FlightBookingTest class file
+* Tried to first check the existing tests
+* There was a typo for the id of the To text field.
+* Also there is a flaw of using the explicit wait. Sometimes the dropdown element value may pop wup within the explicit wait but sometimes it does not.
+
+Improvement Suggestion:
+* Adjust the locators, can be moved to Page class as we did in SignInPage
+* Created an implicit wait, so that we can have the stable test
+
+
+
 
