@@ -2,6 +2,10 @@ package tests;
 
 import pages.FlightBookingPage;
 import utiity.Base;
+import utiity.WaitHelper;
+
+import java.util.concurrent.TimeUnit;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -21,7 +25,8 @@ public class FlightBookingTest extends Base{
     	
     	FlightBookingPage flightBooking = new FlightBookingPage(driver);
     	navigateToApplication("https://www.cleartrip.com/");
-    	waitFor(2000);
+    	WaitHelper waitHelper = new WaitHelper(driver);
+    	waitHelper.setImplicitWait(10, TimeUnit.SECONDS);
     	flightBooking.searchForOneWayFlights("Bangalore", "Delhi");
 
         /*driver = setDriverPath();
@@ -65,13 +70,13 @@ public class FlightBookingTest extends Base{
     }
 
 
-    private void waitFor(int durationInMilliSeconds) {
+    /*private void waitFor(int durationInMilliSeconds) {
         try {
             Thread.sleep(durationInMilliSeconds);
         } catch (InterruptedException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
-    }
+    }*/
 
 
     /*private boolean isElementPresent(By by) {

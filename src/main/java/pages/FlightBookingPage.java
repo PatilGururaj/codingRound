@@ -4,12 +4,15 @@
 package pages;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import utiity.WaitHelper;
 
 /**
  * @author g.patil
@@ -47,23 +50,17 @@ public class FlightBookingPage {
 		radioButtonOneWay.click();
 		txtBoxFrom.clear();
 		txtBoxFrom.sendKeys(src);
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		WaitHelper waitHelper = new WaitHelper(driver);
+		waitHelper.setImplicitWait(10, TimeUnit.SECONDS);
 		List<WebElement> originOptions = driver.findElement(By.id("ui-id-1")).findElements(By.tagName("li"));
 		originOptions.get(0).click();
+		
 		txtBoxTo.clear();
 		txtBoxTo.sendKeys(dest);
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		waitHelper.setImplicitWait(10, TimeUnit.SECONDS);
 		List<WebElement> destinationOptions = driver.findElement(By.id("ui-id-2")).findElements(By.tagName("li"));
 		destinationOptions.get(0).click();
+		
 		datePicker.click();
 		btnSearchFlights.click();
 	}

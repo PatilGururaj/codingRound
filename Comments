@@ -50,6 +50,9 @@ Improvement Suggestion:
 Implemented Suggestion:
 * Created a new Page class FlightBookingPage and moved all the locators here.
 * Moved the test stepa\actions from FlightBookingTest to a parameterized method in FlightBookingPage, so that user can pass the source and destination from Test. 
+* Changed the assertion to check the search summary has the correct results
+* Implemented the wait utility which we can reuse.
+* Refactor'd the FlightBookingTest class by using the method from Page class
 
 
 
