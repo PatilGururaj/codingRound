@@ -23,3 +23,7 @@ Implemented Suggestions:
 Further Improvements:
 * Will create separate utility class for comparing the actual and expected values
 * Will create utility for Window functions
+
+Implemented Suggestions:
+* Moved the Driver path and initialization in separate Base class
+* Renamed the method as setUpDriver instead of setUpDriverPath
