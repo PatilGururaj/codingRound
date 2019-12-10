@@ -2,6 +2,10 @@ package tests;
 
 import pages.SignInPage;
 import utiity.Base;
+import utiity.WaitHelper;
+
+import java.util.concurrent.TimeUnit;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,7 +16,8 @@ public class SignInTest extends Base{
 
     	SignInPage signInPage  = new SignInPage(driver);
     	navigateToApplication("https://www.cleartrip.com/");
-    	waitFor(2000);
+    	WaitHelper waitHelper = new WaitHelper(driver);
+    	waitHelper.setImplicitWait(3, TimeUnit.SECONDS);
     	String errors1 = signInPage.signIn();
     	
     	/*WebDriver driver = setDriverPath();
@@ -38,13 +43,13 @@ public class SignInTest extends Base{
         driver.quit();
     }
 
-    private void waitFor(int durationInMilliSeconds) {
+    /*private void waitFor(int durationInMilliSeconds) {
         try {
             Thread.sleep(durationInMilliSeconds);
         } catch (InterruptedException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
-    }
+    }*/
 
    /* private WebDriver setDriverPath() {
         if (PlatformUtil.isMac()) {

@@ -53,6 +53,7 @@ Implemented Suggestion:
 * Changed the assertion to check the search summary has the correct results
 * Implemented the wait utility which we can reuse.
 * Refactor'd the FlightBookingTest class by using the method from Page class
+* Also refactor'd the SignInTest class by replacing the waitFor method with implicitwait method from WaitHelper class
 
 
 
