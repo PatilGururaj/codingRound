@@ -55,6 +55,16 @@ Implemented Suggestion:
 * Refactor'd the FlightBookingTest class by using the method from Page class
 * Also refactor'd the SignInTest class by replacing the waitFor method with implicitwait method from WaitHelper class
 
+Started with HotelBookingTest
+Implemented Improvement:
+* Extended the Base class to the test
+* Moved the object locators to the new Page class
+* Updated the wait helper class to add the explicit wait as well and used the same in the HotelBookingPage.class
+* Move the user actions to the Page class as functions
 
-
-
+Further Improvement Suggestions:
+* All the static test data are hard coded in the test class file, instead we can have it from one common reference. 
+So that any change in data, we can edit the file and can avoid editing the test class files.
+* Logging is missing, this can be implemented
+* Reporting is missing, this can be implemented 
+* We can create test suite using TestNg xml file
