@@ -23,9 +23,7 @@ public class HotelBookingTest extends Base{
 
     @Test
     public void shouldBeAbleToSearchForHotels() {
-        
-    	
-    	
+          	
     	/*setDriverPath();
 
         driver.get("https://www.cleartrip.com/");

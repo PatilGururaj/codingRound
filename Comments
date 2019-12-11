@@ -68,3 +68,9 @@ So that any change in data, we can edit the file and can avoid editing the test 
 * Logging is missing, this can be implemented
 * Reporting is missing, this can be implemented 
 * We can create test suite using TestNg xml file
+* We can add the screenshots on the result
+
+Further improvements Implemented:
+* Removed the implicit waits and added explicit waits
+* Sometimes the test are failing because of the chrome notifications. So now disabled the pop up and notifications in base test class
+* 

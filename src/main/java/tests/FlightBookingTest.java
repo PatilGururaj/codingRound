@@ -2,10 +2,6 @@ package tests;
 
 import pages.FlightBookingPage;
 import utiity.Base;
-import utiity.WaitHelper;
-
-import java.util.concurrent.TimeUnit;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -25,8 +21,6 @@ public class FlightBookingTest extends Base{
     	
     	FlightBookingPage flightBooking = new FlightBookingPage(driver);
     	navigateToApplication("https://www.cleartrip.com/");
-    	WaitHelper waitHelper = new WaitHelper(driver);
-    	waitHelper.setImplicitWait(10, TimeUnit.SECONDS);
     	flightBooking.searchForOneWayFlights("Bangalore", "Delhi");
 
         /*driver = setDriverPath();

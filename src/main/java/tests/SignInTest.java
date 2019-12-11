@@ -2,10 +2,6 @@ package tests;
 
 import pages.SignInPage;
 import utiity.Base;
-import utiity.WaitHelper;
-
-import java.util.concurrent.TimeUnit;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,8 +12,6 @@ public class SignInTest extends Base{
 
     	SignInPage signInPage  = new SignInPage(driver);
     	navigateToApplication("https://www.cleartrip.com/");
-    	WaitHelper waitHelper = new WaitHelper(driver);
-    	waitHelper.setImplicitWait(3, TimeUnit.SECONDS);
     	String errors1 = signInPage.signIn();
     	
     	/*WebDriver driver = setDriverPath();

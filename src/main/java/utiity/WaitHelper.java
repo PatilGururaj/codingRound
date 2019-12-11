@@ -41,14 +41,14 @@ public class WaitHelper {
 	 * @param driver
 	 * @param by
 	 */
-	public WebElement setExplicitWait(WebDriver driver, By by){
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+	public WebElement setExplicitWait(WebDriver driver, By by, int timeOutInSeconds){
+		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
 		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		return element;
 	}
 	
 	/**
-	 * This is ExplicitWait method
+	 * This method is ExplicitWait with condition for the element to be clickable
 	 * @param driver
 	 * @param element
 	 */

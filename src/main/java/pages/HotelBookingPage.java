@@ -62,7 +62,7 @@ public class HotelBookingPage {
 		localityTextBox.clear();
 		localityTextBox.sendKeys(location);
 		
-		WebElement allOptions = wait.setExplicitWait(driver, By.xpath("//ul[@id='ui-id-1']"));
+		WebElement allOptions = wait.setExplicitWait(driver, By.xpath("//ul[@id='ui-id-1']"),20);
 		List<WebElement> allOptionsResult = allOptions.findElements(By.xpath("./li"));
 		allOptionsResult.get(1).click();
 		checkInDate.click();
@@ -77,9 +77,12 @@ public class HotelBookingPage {
 	 */
 	public Boolean verifySearchResult(String location) {
 		Boolean flag = false;
-		List<WebElement> searchConfirmation = driver.findElements(By.xpath("//div[@class='row searchWidgetRow propertySection']//strong"));
+		WaitHelper wait = new WaitHelper(driver);
+		WebElement confirmation = wait.setExplicitWait(driver, By.xpath("//div[@class='row searchWidgetRow propertySection']"), 25);
+		List<WebElement> searchConfirmation = confirmation.findElements(By.xpath(".//strong"));
 		for(WebElement eachElement: searchConfirmation){
 			if(location.contains(eachElement.getText())){
+				System.out.println("Search locality"+location+" contains the text "+eachElement.getText());
 				flag=true;
 			}
 		}
