@@ -64,7 +64,7 @@ Implemented Improvement:
 
 Further Improvement Suggestions:
 * All the static test data are hard coded in the test class file, instead we can have it from one common reference. 
-So that any change in data, we can edit the file and can avoid editing the test class files.
+  So that any change in data, we can edit the file and can avoid editing the test class files.
 * Logging is missing, this can be implemented
 * Reporting is missing, this can be implemented 
 * We can create test suite using TestNg xml file
@@ -73,4 +73,6 @@ So that any change in data, we can edit the file and can avoid editing the test 
 Further improvements Implemented:
 * Removed the implicit waits and added explicit waits
 * Sometimes the test are failing because of the chrome notifications. So now disabled the pop up and notifications in base test class
+* Added a testng.xml file to include the test classes
+* Further refactor'd the Base class
 * 

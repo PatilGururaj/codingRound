@@ -7,22 +7,33 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+
 
 /**
  * @author g.patil
  *
  */
 public class Base {
+		
 	
 	public WebDriver driver;
-	
-	@BeforeTest
-	public void setUpDriver(){
-		driver = getChromeBrowserInstance(setChromeOptions());
-		driver.manage().window().maximize();
+		
+	@BeforeClass
+	public void beforeClass(){
+		driver = setUpDriver();
 	}
 	
+	/**
+	 * Setting up the driver with required capabilities
+	 * @return
+	 */
+	public WebDriver setUpDriver(){
+		driver = getChromeBrowserInstance(setChromeOptions());
+		driver.manage().window().maximize();
+		return driver;
+	}
 	
 	/**
 	 * This method helps to set the chromeOptions
@@ -56,9 +67,22 @@ public class Base {
         return null;
 	}
 	
-		
+	/**	
+	 * This method is to navigate to specific URL
+	 * @param Url
+	 */
 	public void navigateToApplication(String Url){
 		driver.get(Url);
+	}
+	
+	/**
+	 * After test method to close the browser instance
+	 */
+	@AfterTest
+	public void afterTest(){
+		if(driver!=null){
+			driver.quit();
+		}
 	}
 
 }

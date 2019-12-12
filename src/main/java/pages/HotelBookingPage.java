@@ -55,6 +55,11 @@ public class HotelBookingPage {
 	@FindBy(id = "travellersOnhome")
 	private WebElement travellerSelection;
 	
+	/**
+	 * This method is used to search the hotels using the locality and traveller details
+	 * @param location
+	 * @param noOfRoomAndTravellers
+	 */
 	public void searchHotels(String location, String noOfRoomAndTravellers){
 		hotelLink.click();
 		WaitHelper wait = new WaitHelper(driver);
@@ -73,7 +78,9 @@ public class HotelBookingPage {
 	}
 
 	/**
-	 * 
+	 * This method is to verify the search result of the Hotels for the locality\location
+	 * @param location
+	 * @return
 	 */
 	public Boolean verifySearchResult(String location) {
 		Boolean flag = false;

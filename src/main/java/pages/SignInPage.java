@@ -37,6 +37,10 @@ public class SignInPage {
 		PageFactory.initElements(driver, this);		
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public String signIn(){
 		WaitHelper wait = new WaitHelper(driver);
 		wait.waitElementTobeClickable(driver, linkYourTrips, 20).click();
