@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 
@@ -76,9 +76,9 @@ public class Base {
 	}
 	
 	/**
-	 * After test method to close the browser instance
+	 * After class method to close the browser instance
 	 */
-	@AfterTest
+	@AfterClass
 	public void afterTest(){
 		if(driver!=null){
 			driver.quit();

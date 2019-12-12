@@ -89,7 +89,7 @@ public class HotelBookingPage {
 		List<WebElement> searchConfirmation = confirmation.findElements(By.xpath(".//strong"));
 		for(WebElement eachElement: searchConfirmation){
 			if(location.contains(eachElement.getText())){
-				System.out.println("Search locality"+location+" contains the text "+eachElement.getText());
+				System.out.println("Search locality "+location+" contains the text "+eachElement.getText());
 				flag=true;
 			}
 		}
