@@ -33,7 +33,7 @@ public class FlightBookingPage {
 	@FindBy(xpath = "//ul[@id='ui-id-1']")
 	WebElement dDowndestOptions;
 	
-	@FindBy(xpath="//*[@id='ui-datepicker-div']/div[1]/table/tbody/tr[3]/td[7]/a")
+	@FindBy(xpath="//*[@id='ui-datepicker-div']//td/a[@class='ui-state-default ui-state-highlight ui-state-active ']")
 	WebElement datePicker;
 	
 	@FindBy(id="SearchBtn")

@@ -75,4 +75,6 @@ Further improvements Implemented:
 * Sometimes the test are failing because of the chrome notifications. So now disabled the pop up and notifications in base test class
 * Added a testng.xml file to include the test classes
 * Further refactor'd the Base class
-* 
+* Removed the driver.quit from test class. As we this included in the Base class file
+* Removed the commented code from the test files
+* Removed one of the obsolute Xpath and replaced with relative xpath
